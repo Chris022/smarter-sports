@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "allowUnreachableCode":true,
+    "alwaysStrict":false,
+    "noImplicitAny":false
+  }
+}
