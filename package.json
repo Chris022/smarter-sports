@@ -4,7 +4,8 @@
   "description": "The Smater way of training",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.ts"
+    "start": "nodemon src/index.ts",
+    "generate_new_key_pair": "node tools/generateKeyPair.ts"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   "homepage": "https://github.com/Chris022/smarter_sports#readme",
   "dependencies": {
     "apollo-server": "^3.10.0",
-    "graphql": "^16.5.0"
+    "cookie-parser": "^1.4.6",
+    "graphql": "^16.5.0",
+    "jose": "^4.8.3"
   },
   "devDependencies": {
     "@types/node": "^18.6.2",
