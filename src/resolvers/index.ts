@@ -1,11 +1,12 @@
-import {books} from "./books"
+import {register,login} from "./auth"
 
 
 
 let resolvers = {
-    Query: {
-      books: () => books,
-    },
+  Mutation:{
+    register,
+    login
+  }
 };
 
 export default resolvers;
