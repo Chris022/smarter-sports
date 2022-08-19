@@ -54,5 +54,3 @@ let startServer= async () =>  {
 }
 startServer()
 app.listen({ port: 4000 }, () => console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`));
-
-//TODO: Hinzufügen von LOGIN/REGISTER/LOGOUT MUTATIONS
