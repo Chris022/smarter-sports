@@ -24,13 +24,13 @@ type LoginAnswer {
 
 input UserInput {
   name:     String!
-  email:    String!
-  password: String!
+  email:    String!     @constraint(minLength: 5, format: "email")
+  password: String!     @constraint(minLength: 5)
 }
 
 input LoginInput {
-  email:      String!
-  password:   String!
+  email:      String!   @constraint(minLength: 5, format: "email")
+  password:   String!   @constraint(minLength: 5)
 }
 
 

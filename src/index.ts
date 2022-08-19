@@ -4,6 +4,9 @@ import path                     from "path"
 import express                  from 'express';
 import { ApolloServer, gql }    from 'apollo-server-express';
 import { makeExecutableSchema } from '@graphql-tools/schema'
+import {
+  constraintDirective,
+  constraintDirectiveTypeDefs}  from 'graphql-constraint-directive'
 
 import { PrismaClient }         from '@prisma/client'
 
@@ -36,16 +39,14 @@ let context = async ({ req,res }) => {
   return {prisma: prisma,logged_in_user:user}
 }
 
-//let schema = makeExecutableSchema({
-//  typeDefs: [constraintDirectiveTypeDefs, typeDefs],
-//  resolversui
-//})
-
-//schema = constraintDirective()(schema)
+let schema = makeExecutableSchema({
+  typeDefs: [constraintDirectiveTypeDefs, typeDefs],
+})
+schema = constraintDirective()(schema)
 
 
 //get_user_id_of_logged_in_user();
-let server = new ApolloServer({ typeDefs, resolvers, context });
+let server = new ApolloServer({ schema });
 
 
 let startServer= async () =>  {
